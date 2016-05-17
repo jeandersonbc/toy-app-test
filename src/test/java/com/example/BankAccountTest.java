@@ -1,31 +1,38 @@
 package com.example;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertTrue;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class BankAccountTest {
 
 	private static BankAccount acc = new BankAccount();
 
 	@Test
-	public void testBalance() {
+	public void testCreation() throws InterruptedException {
 		assertNotNull(acc);
-		assertTrue(0.0 == acc.balance());
+		Thread.sleep(5000);
 	}
 
 	@Test
-	public void testWithdraw() {
+	public void testBalance() throws InterruptedException {
+		assertNotNull(acc.balance());
+		Thread.sleep(5000);
+	}
+
+	@Test
+	public void testWithdraw() throws InterruptedException {
 		acc.withdraw(2.0);
 		assertTrue(-2.0 == acc.balance());
-
+		Thread.sleep(5000);
 	}
 
 	@Test
-	public void testDeposit() {
+	public void testDeposit() throws InterruptedException {
 		acc.deposit(4.0);
 		assertTrue(2.0 == acc.balance());
+		Thread.sleep(5000);
 	}
 
 }

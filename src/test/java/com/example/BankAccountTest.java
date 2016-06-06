@@ -29,7 +29,7 @@ public class BankAccountTest {
 	}
 
 	@Test
-	public void testDeposit() throws InterruptedException {
+	public void testZDeposit() throws InterruptedException {
 		acc.deposit(4.0);
 		assertTrue(2.0 == acc.balance());
 		Thread.sleep(5000);
